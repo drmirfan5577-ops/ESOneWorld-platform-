@@ -1,0 +1,565 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 220 25% 8%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 8%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 8%;
+    --primary: 162 100% 39%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 220 25% 8%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 338 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 162 100% 39%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+/* ==========================================
+   CRYSTALLINE GLASS SURFACE SYSTEM
+   ========================================== */
+
+.glass-crystal {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255,255,255,0.9),
+    inset 0 -1px 0 rgba(0,0,0,0.04);
+}
+
+.glass-emerald {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(0,200,138,0.12) 50%, rgba(255,255,255,0.85) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(0,200,138,0.25);
+  box-shadow: 
+    0 8px 32px rgba(0,200,138,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.95),
+    0 0 0 1px rgba(0,200,138,0.08);
+}
+
+.glass-crimson {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(232,0,61,0.08) 50%, rgba(255,255,255,0.85) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(232,0,61,0.2);
+  box-shadow: 
+    0 8px 32px rgba(232,0,61,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.glass-sapphire {
+  background: linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(0,102,255,0.08) 50%, rgba(255,255,255,0.85) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(0,102,255,0.2);
+  box-shadow: 
+    0 8px 32px rgba(0,102,255,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.glass-aurora {
+  background: linear-gradient(135deg, rgba(255,255,255,0.82) 0%, rgba(155,89,182,0.08) 30%, rgba(0,188,212,0.08) 70%, rgba(255,255,255,0.82) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border: 1px solid rgba(155,89,182,0.2);
+  box-shadow: 
+    0 8px 32px rgba(155,89,182,0.1),
+    inset 0 1px 0 rgba(255,255,255,0.95);
+}
+
+.glass-holographic {
+  background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,179,0,0.06) 25%, rgba(0,200,138,0.06) 50%, rgba(0,102,255,0.06) 75%, rgba(255,255,255,0.9) 100%);
+  background-size: 300% 300%;
+  animation: glass-refract 8s ease infinite;
+  backdrop-filter: blur(24px) saturate(220%);
+  -webkit-backdrop-filter: blur(24px) saturate(220%);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 
+    0 8px 40px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,1),
+    0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ==========================================
+   TUBE LIGHT GLOW EFFECTS
+   ========================================== */
+
+.tube-text-emerald {
+  color: #004d35;
+  text-shadow: 
+    0 0 8px rgba(0,200,138,0.6),
+    0 0 16px rgba(0,200,138,0.3),
+    0 0 32px rgba(0,200,138,0.15);
+  animation: tube-glow 2s ease-in-out infinite;
+}
+
+.tube-text-crimson {
+  color: #6b0020;
+  text-shadow: 
+    0 0 8px rgba(232,0,61,0.5),
+    0 0 16px rgba(232,0,61,0.25),
+    0 0 32px rgba(232,0,61,0.12);
+  animation: tube-glow 2.5s ease-in-out infinite;
+}
+
+.tube-text-sapphire {
+  color: #001a66;
+  text-shadow: 
+    0 0 8px rgba(0,102,255,0.5),
+    0 0 16px rgba(0,102,255,0.25),
+    0 0 32px rgba(0,102,255,0.12);
+  animation: tube-glow 3s ease-in-out infinite;
+}
+
+.tube-text-gold {
+  color: #5a3a00;
+  text-shadow: 
+    0 0 8px rgba(255,179,0,0.6),
+    0 0 16px rgba(255,179,0,0.3),
+    0 0 32px rgba(255,179,0,0.15);
+  animation: tube-glow 2.2s ease-in-out infinite;
+}
+
+.glow-border-emerald {
+  box-shadow: 
+    0 0 0 1px rgba(0,200,138,0.3),
+    0 0 12px rgba(0,200,138,0.2),
+    0 0 24px rgba(0,200,138,0.1);
+}
+
+.glow-border-crimson {
+  box-shadow: 
+    0 0 0 1px rgba(232,0,61,0.3),
+    0 0 12px rgba(232,0,61,0.2),
+    0 0 24px rgba(232,0,61,0.1);
+}
+
+/* ==========================================
+   VIBRANT ANIMATED BACKGROUND SYSTEM
+   ========================================== */
+
+.bg-matrix-live {
+  background: 
+    radial-gradient(ellipse at 10% 20%, rgba(0,200,138,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 10%, rgba(0,102,255,0.10) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(232,0,61,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 60%, rgba(255,179,0,0.08) 0%, transparent 40%),
+    radial-gradient(ellipse at 20% 70%, rgba(155,89,182,0.07) 0%, transparent 40%),
+    linear-gradient(180deg, #ffffff 0%, #f8fbff 50%, #fff8f9 100%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   THEME LAUNCHERS
+   ========================================== */
+
+/* Theme 1: Crystal White */
+.theme-crystal {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #fefffe 100%);
+}
+
+/* Theme 2: Emerald Glass */
+.theme-emerald-glass {
+  background: linear-gradient(135deg, #ffffff 0%, #e8fff5 30%, #f0fff8 60%, #ffffff 100%);
+}
+
+/* Theme 3: Crimson Glass */
+.theme-crimson-glass {
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f3 30%, #fff5f5 60%, #ffffff 100%);
+}
+
+/* Theme 4: Sapphire Glass */
+.theme-sapphire-glass {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4ff 30%, #f5f8ff 60%, #ffffff 100%);
+}
+
+/* Theme 5: Aurora Holographic */
+.theme-aurora {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f0ff 20%, #f0fff8 40%, #fff8f0 60%, #f0f8ff 80%, #ffffff 100%);
+  background-size: 300% 300%;
+  animation: glass-refract 10s ease infinite;
+}
+
+/* Theme 6: Galaxy Spark */
+.theme-galaxy {
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0,102,255,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(155,89,182,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 60% 20%, rgba(0,200,138,0.06) 0%, transparent 30%),
+    linear-gradient(180deg, #ffffff 0%, #fafbff 100%);
+}
+
+/* Theme 7: Fiery Glass */
+.theme-fiery {
+  background: 
+    radial-gradient(ellipse at top, rgba(255,100,0,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(232,0,61,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #ffffff 0%, #fffaf8 100%);
+}
+
+/* Theme 8: Ultra Deep */
+.theme-ultra-deep {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(0,0,30,0.04) 0%, transparent 100%),
+    linear-gradient(180deg, #f8faff 0%, #ffffff 50%, #f8faff 100%);
+}
+
+/* ==========================================
+   SCROLLBAR STYLING
+   ========================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0,200,138,0.4), rgba(0,102,255,0.4));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(0,200,138,0.7), rgba(0,102,255,0.7));
+}
+
+/* ==========================================
+   LIVE TICKER MARQUEE
+   ========================================== */
+
+.ticker-wrap {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: marquee 25s linear infinite;
+}
+
+/* ==========================================
+   NAVIGATION & LAYOUT
+   ========================================== */
+
+.nav-glass {
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 1px solid rgba(255,255,255,0.7);
+  box-shadow: 0 1px 24px rgba(0,0,0,0.06);
+}
+
+.sidebar-glass {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.75);
+  box-shadow: 0 16px 64px rgba(0,0,0,0.08);
+}
+
+/* ==========================================
+   STAR BUTTON
+   ========================================== */
+
+.star-btn {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.75));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.8);
+  box-shadow: 
+    0 4px 16px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,1);
+  transition: all 0.3s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.star-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 
+    0 8px 24px rgba(0,0,0,0.12),
+    0 0 16px rgba(0,200,138,0.3),
+    inset 0 1px 0 rgba(255,255,255,1);
+}
+
+.star-btn.active {
+  background: linear-gradient(135deg, rgba(0,200,138,0.15), rgba(0,102,255,0.1));
+  border-color: rgba(0,200,138,0.4);
+  box-shadow: 
+    0 4px 16px rgba(0,200,138,0.2),
+    0 0 24px rgba(0,200,138,0.15);
+}
+
+/* ==========================================
+   ORB FLOATING ELEMENTS
+   ========================================== */
+
+.orb-emerald {
+  background: radial-gradient(circle, rgba(0,200,138,0.25) 0%, rgba(0,200,138,0.05) 60%, transparent 100%);
+  border-radius: 50%;
+  animation: orb-float 6s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+.orb-crimson {
+  background: radial-gradient(circle, rgba(232,0,61,0.2) 0%, rgba(232,0,61,0.04) 60%, transparent 100%);
+  border-radius: 50%;
+  animation: orb-float 8s ease-in-out infinite reverse;
+  filter: blur(1px);
+}
+
+.orb-sapphire {
+  background: radial-gradient(circle, rgba(0,102,255,0.18) 0%, rgba(0,102,255,0.04) 60%, transparent 100%);
+  border-radius: 50%;
+  animation: orb-float 7s ease-in-out infinite;
+  filter: blur(1px);
+  animation-delay: -3s;
+}
+
+/* ==========================================
+   CARD INTERACTIONS
+   ========================================== */
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.1),
+    0 0 0 1px rgba(255,255,255,0.8);
+}
+
+/* ==========================================
+   STATUS INDICATORS
+   ========================================== */
+
+.status-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00c88a;
+  position: relative;
+}
+
+.status-dot::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: rgba(0,200,138,0.3);
+  animation: pulse-ring 1.5s cubic-bezier(0,0,0.2,1) infinite;
+}
+
+/* ==========================================
+   FORM ELEMENTS
+   ========================================== */
+
+.input-glass {
+  background: rgba(255,255,255,0.8);
+  border: 1.5px solid rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.input-glass:focus {
+  outline: none;
+  border-color: rgba(0,200,138,0.5);
+  box-shadow: 0 0 0 3px rgba(0,200,138,0.12), 0 0 12px rgba(0,200,138,0.1);
+  background: rgba(255,255,255,0.95);
+}
+
+/* ==========================================
+   BUTTON SYSTEM
+   ========================================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, #00c88a 0%, #00a572 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0,200,138,0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,200,138,0.4);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.9);
+  color: #1a1a2e;
+  border: 1.5px solid rgba(0,0,0,0.12);
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,1);
+  border-color: rgba(0,200,138,0.4);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #e8003d 0%, #b8002f 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(232,0,61,0.3);
+}
+
+.btn-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(232,0,61,0.4);
+}
+
+/* ==========================================
+   BADGE / TAG SYSTEM
+   ========================================== */
+
+.badge-emerald {
+  background: rgba(0,200,138,0.12);
+  color: #004d35;
+  border: 1px solid rgba(0,200,138,0.3);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-crimson {
+  background: rgba(232,0,61,0.08);
+  color: #6b0020;
+  border: 1px solid rgba(232,0,61,0.2);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-sapphire {
+  background: rgba(0,102,255,0.08);
+  color: #001a66;
+  border: 1px solid rgba(0,102,255,0.2);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge-gold {
+  background: rgba(255,179,0,0.12);
+  color: #5a3a00;
+  border: 1px solid rgba(255,179,0,0.3);
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==========================================
+   SECTION DIVIDERS
+   ========================================== */
+
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,200,138,0.3), rgba(0,102,255,0.3), transparent);
+}
+
+/* ==========================================
+   RESPONSIVE SCROLLABLE PANELS
+   ========================================== */
+
+.panel-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+/* ==========================================
+   DIMENSION TABS
+   ========================================== */
+
+.dim-tab-active {
+  background: linear-gradient(135deg, rgba(0,200,138,0.15), rgba(0,102,255,0.1));
+  border-color: rgba(0,200,138,0.4);
+  color: #004d35;
+  font-weight: 600;
+}
+
+/* ==========================================
+   TABLE STYLES
+   ========================================== */
+
+.table-glass tbody tr {
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+  transition: background 0.15s ease;
+}
+
+.table-glass tbody tr:hover {
+  background: rgba(0,200,138,0.04);
+}
